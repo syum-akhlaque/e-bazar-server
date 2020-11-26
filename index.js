@@ -125,6 +125,6 @@ app.get('/getPromocodes', (req, res)=>{    //-----------to get all promocode lis
 
 });
 
-app.listen(port) 
+app.listen(process.env.PORT || port) 
 
 
