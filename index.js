@@ -5,8 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const fileUpload = require('express-fileupload');
 const ObjectId = require('mongodb').ObjectId;
 
-
-const app = express()
+const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -19,7 +18,6 @@ const dbName =  process.env.DB_NAME;
 const username = process.env.DB_USER;
 const password = process.env.DB_PASS;
 const uri = `mongodb+srv://${username}:${password}@cluster0.plwup.mongodb.net/${dbName}?retryWrites=true&w=majority`;
-
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
@@ -126,5 +124,3 @@ app.get('/getPromocodes', (req, res)=>{    //-----------to get all promocode lis
 });
 
 app.listen(process.env.PORT || port) 
-
-
